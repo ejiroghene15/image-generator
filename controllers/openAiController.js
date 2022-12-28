@@ -17,7 +17,7 @@ const generateImage = async (req, res) => {
 			size = "512x512";
 			break;
 		default:
-			size = "1024X1024";
+			size = "1024x1024";
 	}
 
 	try {
@@ -31,7 +31,7 @@ const generateImage = async (req, res) => {
 
 		res.status(200).json({
 			status: true,
-			data: imageUrl,
+			imageUrl,
 		});
 	} catch (error) {
 		if (error.response) {
