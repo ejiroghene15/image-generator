@@ -1,4 +1,15 @@
-const API_ENDPOINT = "http://localhost:5000/openai/generate-image";
+let API_ENDPOINT;
+
+switch (location.hostname) {
+	case "localhost":
+		API_ENDPOINT = "http://localhost:5000/openai/generate-image";
+		break;
+
+	default:
+		API_ENDPOINT =
+			"https://my-image-generator.herokuapp.com/openai/generate-image";
+		break;
+}
 
 gen_img.addEventListener("click", function () {
 	generateImage();
