@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>OpenAI Image Generator</title>
+	</head>
+
+	<body>
+		<div id="loader">
+			<div class="spinner-grow text-info" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+
+		<nav class="navbar bg-dark" data-bs-theme="dark">
+			<div class="container-fluid">
+				<span class="navbar-brand mb-0 h1">Image Generator</span>
+				<a href="https://beta.openai.com/" class="nav-link text-light"> OpenAI </a>
+			</div>
+		</nav>
+
+		<main class="container">
+			<div class="col-md-4 mx-auto mt-5 pt-5">
+				<div class="card">
+					<section class="card-body">
+						<h5 class="card-title">Describe an Image</h5>
+						<div class="form-group my-3">
+							<label for="prompt" class="text-muted">Enter Text</label>
+							<input type="name" id="prompt" class="form-control" />
+						</div>
+						<div class="form-group mb-3">
+							<label for="size" class="text-muted">Choose Size</label>
+							<select name="size" id="size" class="form-control">
+								<option value="small">Small</option>
+								<option value="medium">Medium</option>
+								<option value="Large">Large</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-success" id="gen_img">
+								Generate Image
+							</button>
+						</div>
+					</section>
+
+					<section id="display_image" class="d-none mb-3">
+						<img id="generated_img" class="d-block mx-auto img-fluid" />
+					</section>
+				</div>
+			</div>
+		</main>
+
+		<footer class=" mt-5 p-3 text-center bg-body-secondary w-100">
+			<a href="https://beta.openai.com/" class="nav-link text-muted">Image Generator Powered By OpenAI</a>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
